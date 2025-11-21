@@ -13,6 +13,7 @@ import {
 import { Replace, Layers, Users, Building, X, User } from 'lucide-react';
 import ManagerStatusChecker from './ManagerStatusChecker';
 import UserSettingsModal from '../pages/users/UserSettingsModal';
+import UpdatePopup from './UpdatePopup';
 // import GlobalSearch from './GlobalSearch';
 
 const DashboardLayout = () => {
@@ -398,10 +399,13 @@ const DashboardLayout = () => {
     </div>
     
     {/* Settings Modal */}
-<UserSettingsModal 
+<UserSettingsModal
   isOpen={showSettingsModal}
   onClose={() => setShowSettingsModal(false)}
 />
+
+    {/* Update Popup - Only for Admin */}
+    {user?.role === 'admin' && <UpdatePopup />}
   </div>
 );
 };
