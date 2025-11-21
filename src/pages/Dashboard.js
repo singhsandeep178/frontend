@@ -7,7 +7,6 @@ import {
 import SummaryApi from '../common';
 import { useAuth } from '../context/AuthContext';
 import LoadingSpinner from '../components/LoadingSpinner';
-import UpdatePopup from "../components/UpdatePopup";
 
 const Dashboard = () => {
   const { user } = useAuth();
@@ -706,8 +705,6 @@ const Dashboard = () => {
           </table>
         </div>
       </div>
-
-     <UpdatePopup />
     </div>
   );
 };
